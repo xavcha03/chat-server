@@ -30,6 +30,7 @@ io.on("connection", (socket) => {
 });
 
 app.get("/", (req, res) => {
+	console.log("GET");
 	res.send("hello world");
 });
 

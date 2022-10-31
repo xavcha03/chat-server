@@ -3,21 +3,14 @@ const app = express();
 const http = require("http");
 const cors = require("cors");
 const { Server } = require("socket.io");
-const async_hooks = require("async_hooks");
 
 app.use(cors()); // Add cors middleware
 
 const server = http.createServer(app);
 
-// const io = new Server(server, {
-// 	cors: {
-// 		origin: "2a02:2788:8f6:501:a1d8:590a:82c1:c738",
-// 		methods: ["GET", "POST"],
-// 	},
-// });
 const io = new Server(server, {
 	cors: {
-		origin: "*",
+		origin: "https://remarkable-churros-2388f7.netlify.app/",
 		methods: ["GET", "POST"],
 	},
 });

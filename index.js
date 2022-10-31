@@ -9,15 +9,13 @@ app.use(cors()); // Add cors middleware
 
 const server = http.createServer(app);
 
-const io = new Server(
-	server
-	//, {
-	// cors: {
-	// 	origin: "2a02:2788:8f6:501:a1d8:590a:82c1:c738",
-	// 	methods: ["GET", "POST"],
-	// },
-	//}
-);
+// const io = new Server(server, {
+// 	cors: {
+// 		origin: "2a02:2788:8f6:501:a1d8:590a:82c1:c738",
+// 		methods: ["GET", "POST"],
+// 	},
+// });
+const io = new Server(server);
 
 io.on("connection", (socket) => {
 	console.log("user connected");

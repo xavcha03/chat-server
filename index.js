@@ -26,10 +26,7 @@ io.on("connection", (socket) => {
 	console.log("user connected");
 
 	socket.on("room1", (datas) => {
-		//console.log("SERVER : GET DATAS : " + datas);
-		console.table({
-			datas,
-		});
+		console.log("SERVER : GET DATAS : " + datas);
 
 		io.emit("room1", datas);
 	});

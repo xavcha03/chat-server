@@ -12,8 +12,12 @@ const io = new Server(server, {
 	cors: {
 		origin: "https://remarkable-churros-2388f7.netlify.app/",
 		methods: ["GET", "POST"],
+		allowedHeaders: ["my-custom-header"],
+		credentials: true,
 	},
 });
+
+io.set('origins', '*:*');
 
 io.on("connection", (socket) => {
 	console.log("user connected");
